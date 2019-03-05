@@ -5,12 +5,13 @@ def rps():
     """
     Rock-Paper-Scissors game
     """
-    probability_list = pd.DataFrame()
-    user_prediction = ''
-    while user_prediction != 'stop':
-        user_prediction = raw_input('Input rock, paper, scissors: ').lower()
-        probability_list.append(user_prediction)
-        print conditional_probability_calc(probability_list)
+    print "Called function properly!!"
+    # probability_list = pd.DataFrame()
+    # user_prediction = ''
+    # while user_prediction != 'stop':
+    #     user_prediction = raw_input('Input rock, paper, scissors: ').lower()
+    #     probability_list.append(user_prediction)
+    #     print conditional_probability_calc(probability_list)
 
 
 def conditional_probability_calc(prediction):

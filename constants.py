@@ -8,3 +8,4 @@ ROCK = 1
 PAPER = 2
 SCISSORS = 3
 USER_PREDICTION = ''
+count = []

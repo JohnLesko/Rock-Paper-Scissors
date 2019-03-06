@@ -1,4 +1,6 @@
 import pandas as pd
+import random
+
 import constants
 
 
@@ -6,12 +8,15 @@ def rps(user_prediction):
     """
     Rock-Paper-Scissors game logic
     """
-    if conditional_probability_calc(user_prediction) == 1:
-        print 2
-    elif conditional_probability_calc(user_prediction) == 2:
-        print 3
+    if len(user_prediction) < 4:
+        return random.randint(1, 4)
     else:
-        print 1
+        if conditional_probability_calc(user_prediction) == 1:
+            return "Paper"
+        elif conditional_probability_calc(user_prediction) == 2:
+            return "Scissors"
+        else:
+            return "Rock"
 
 
 def conditional_probability_calc(prediction):

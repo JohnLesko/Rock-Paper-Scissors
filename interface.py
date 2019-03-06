@@ -19,8 +19,8 @@ class RPS_Interface(Frame):
 
     def append_to_list(self, num):
         constants.USER_SELECTIONS.append(num)
-        rock_label = Label(self, text=constants.USER_SELECTIONS)
-        rock_label.grid(row=1)
+        append_to_list_label = Label(self, text=rps(constants.USER_SELECTIONS))
+        append_to_list_label.grid(row=1)
 
     def create_widgets(self):
         button_rock = Button(self, text="ROCK", font=FONT, borderwidth=2,

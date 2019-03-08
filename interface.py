@@ -1,8 +1,12 @@
+# Standard module imports
 from Tkinter import *
+
+# External module imports
 import constants
 from rock_paper_scissors import rps
 
 
+# Initialize the interface
 FONT = ('Helvetica', 11)
 r_p_s = Tk()
 r_p_s.title("Rock-Paper-Scissors Battle")
@@ -26,9 +30,11 @@ class RPS_Interface(Frame):
         button_rock = Button(self, text="ROCK", font=FONT, borderwidth=2,
                              command=lambda: self.append_to_list(constants.ROCK))
         button_rock.grid(row=0, column=0, sticky="NSEW")
+
         button_paper = Button(self, text="PAPER", font=FONT, borderwidth=2,
                               command=lambda: self.append_to_list(constants.PAPER))
         button_paper.grid(row=0, column=1, sticky="NSEW")
+
         button_scissors = Button(self, text="SCISSORS", font=FONT, borderwidth=2,
                                  command=lambda: self.append_to_list(constants.SCISSORS))
         button_scissors.grid(row=0, column=2, sticky="NSEW")

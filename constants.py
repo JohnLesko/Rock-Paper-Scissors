@@ -2,10 +2,10 @@
 Rock-Paper-Scissors Constants
 """
 
-from __future__ import division, absolute_import
-
 ROCK = 1
 PAPER = 2
 SCISSORS = 3
-CONDITIONAL_PROBABILITY = []
+CONDITIONAL_PROBABILITY_1 = []
+CONDITIONAL_PROBABILITY_2 = []
+CONDITIONAL_PROBABILITY_3 = []
 USER_SELECTIONS = []

@@ -6,12 +6,19 @@ import random
 import constants
 
 
+# def win_tie_loss(user_selection):
+#     """
+#     Rock-Paper-Scissors game logic
+#     """
+#     if user_selection ==
+
+
 def rps(user_prediction):
     """
     Rock-Paper-Scissors game logic
     """
-    if len(user_prediction) < 4:
-        return random.randint(1, 3)
+    if 1 or 2 or 3 not in user_prediction:
+        return "Rock"
     else:
         if conditional_probability_calc(user_prediction) == 1:
             return "Paper"
@@ -24,7 +31,7 @@ def rps(user_prediction):
 def conditional_probability_calc(prediction):
     """
     Convert predictions list to DataFrame and calculate the conditional
-    probability of the next choice based on the
+    probability of the next choice based on the most recent selection
     """
 
     if prediction[-1] == 1:

@@ -3,7 +3,7 @@ from Tkinter import *
 
 # External module imports
 import constants
-from rock_paper_scissors import rps
+from rock_paper_scissors import rps, win_tie_loss
 
 
 # Initialize the interface
@@ -20,22 +20,33 @@ class RPSInterface(Frame):
         self.create_widgets()
 
     def multiple_call(self, num):
-        # constants.USER_SELECTIONS.append(num)
-        # rps(constants.USER_SELECTIONS)
-        if num == 1:
-            constants.counter_win += 1
-            win_count.set(constants.counter_win)
-        elif num == 2:
+        constants.USER_SELECTIONS.append(num)
+
+        if win_tie_loss(num, rps(constants.USER_SELECTIONS)) == 'TIE':
             constants.counter_tie += 1
             tie_count.set(constants.counter_tie)
-        else:
+        elif win_tie_loss(num, rps(constants.USER_SELECTIONS)) == 'WIN':
+            constants.counter_win += 1
+            win_count.set(constants.counter_win)
+        elif win_tie_loss(num, rps(constants.USER_SELECTIONS)) == 'LOSE':
             constants.counter_loses += 1
             computer_win_count.set(constants.counter_loses)
+
+        computer_choice.set(rps(constants.USER_SELECTIONS))
+
+        if num == 1:
+            user_choice.set("ROCK")
+        elif num == 2:
+            user_choice.set("PAPER")
+        else:
+            user_choice.set("SCISSORS")
 
     def create_widgets(self):
         global win_count
         global tie_count
         global computer_win_count
+        global user_choice
+        global computer_choice
 
         win_count = StringVar()
         win_count.set("0")
@@ -83,10 +94,20 @@ class RPSInterface(Frame):
         previous_game.grid(row=5, columnspan=3, sticky="NSEW")
 
         previous_person = Label(self, justify=RIGHT, text="Your previous choice:")
-        previous_person.grid(row=6, column=0)
+        previous_person.grid(row=6, columnspan=2)
+
+        user_choice = StringVar()
+        user_choice.set("None")
+        display_win = Label(self, font=FONT, justify=LEFT, textvariable=user_choice)
+        display_win.grid(row=6, column=2, sticky="NSEW")
 
         previous_computer = Label(self, justify=RIGHT, text="Computer previous choice:")
-        previous_computer.grid(row=7, column=0)
+        previous_computer.grid(row=7, columnspan=2)
+
+        computer_choice = StringVar()
+        computer_choice.set("None")
+        display_win = Label(self, font=FONT, justify=LEFT, textvariable=computer_choice)
+        display_win.grid(row=7, column=2, sticky="NSEW")
 
 
 if __name__ == '__main__':

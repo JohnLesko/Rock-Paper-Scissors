@@ -12,3 +12,4 @@ USER_SELECTIONS = []
 counter_win = 0
 counter_tie = 0
 counter_loses = 0
+
